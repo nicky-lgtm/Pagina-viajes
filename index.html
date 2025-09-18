@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagina de Viajes</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet">
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+  i{
+    font-size: 1.8rem;
+    margin-left: 10px;
+  }
+</style>
+    
+</head>
+
+<body>
+  <div class="screen__active">
+  <div class="hero">
+
+    <div class="hero__overlay">
+      <h1 class="title">Explora tu viaje en Colombia</h1>
+      <p class="paragraph">Encuentra tu próximo destino de viaje</p>
+      <button class="hero__btn hero__btn--iniciar">Iniciar sesión</button>
+      <button class="hero__btn hero__btn--crear">Crear cuenta</button>
+    </div>
+    <img src="hero4.jpg" alt="Imagen de un paisaje" class="hero__img">
+  </div>
+</div>
+  <!-- INICIO -->
+   <div class="screen__login">
+  <div class="login" id="login" style="display:none;">
+    <div class="login__container">
+    <h2 class="subtitle">Iniciar sesión</h2>
+      <form>
+        <i class="fa-solid fa-user"></i>
+        <label for="emailLogin" ></label>
+        <input type="email" id="emailLogin" name="emailLogin" required placeholder="Correo Electronico"><br><br>
+        <i class="fa-solid fa-key"></i>
+        <label for="passwordLogin" ></label>
+        <input type="password" id="passwordLogin" name="passwordLogin" required placeholder="Contraseña"><br><br>
+        <label for="rememberLogin" ></label>
+        <input type="checkbox" id="rememberLogin" name="rememberLogin" required placeholder="Contraseña">  Recordar Contraseña <br><br>
+        <p>¿Olvidaste tu Contraseña?</p>
+      </form>
+      
+      <button id="btnLoginContinuar">Iniciar sesión</button>
+    </div>
+    <img src="hero6.jpg" alt="Imagen de un paisaje" class="login__img">
+  </div>
+   </div>
+  <!-- REGISTRO -->
+   <div class="screen__registro"></div>
+  <div class="registro" id="registro" style="display:none;">
+    <div class="registro__container">
+    <h2 class="subtitle">Crear cuenta</h2>
+
+      <form>
+       <i class="fa-solid fa-user"></i>
+        <label for="nombre"></label>
+        <input type="text" id="nombre" name="nombre" required placeholder="Nombre de Usuario"><br><br>
+        <i class="fa-solid fa-envelope"></i>
+        <label for="email"></label>
+        <input type="email" id="email" name="email" required placeholder="Correo Electronico"><br><br>
+        <i class="fa-solid fa-key"></i>
+        <label for="password"></label>
+        <input type="password" id="password" name="password" required placeholder="Contraseña"><br><br>
+      </form>
+      <button id="btnRegistroContinuar">Crear Cuenta</button>
+    </div>
+    <img src="hero5.jpg" alt="Imagen de un paisaje" class="registro__img">
+  </div>
+
+  <!-- Pantalla principal -->
+   <div class="screen__app">
+  <div class="app" id="app" style="display:none;">
+    <h2>Bienvenido a tu app de viajes</h2>
+    <!-- Aquí irán destinos y demás -->
+  </div>
+</div>
+
+  <div class="destinos" style="display:none;">
+    <h2>Destinos populares</h2>
+    <div class="destinos__cards"></div>
+  </div>
+
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>
