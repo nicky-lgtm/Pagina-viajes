@@ -1,0 +1,1552 @@
+* {
+  padding: 0%;
+  margin: 0%;
+  font-family: "montserrat", sans-serif;
+  
+}
+html, body {
+  overflow-x: hidden;
+}
+:root {
+  --blanco: #fafafa;
+  --violeta: #7E80FF;
+  --naranja: #FFD28F;
+  --azul: #4C5EFF;
+  --hover: #FF8F5C;
+  --titulo: #2C2C2C;
+  --texto: #6B6B6B;
+}
+
+.hero__title,
+.hero__paragraph,
+.hero__btn,
+.hero__overlay {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.7);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.hero * {
+  position: relative;
+  z-index: 2;
+}
+
+.hero__overlay {
+  width: clamp(270px, 60%, 800px);
+  height: auto;
+  box-shadow: 0 0 70px rgba(0, 0, 0, 0.7);
+  background-color: rgba(63, 63, 63, 0.4);
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.hero__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+.hero__btn {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 22px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.title {
+  font-size: clamp(2rem, 4rem, 6rem);
+  margin-bottom: clamp(1rem, 2rem, 3rem);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  font-family: "Montserrat", sans-serif;
+}
+
+.paragraph {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  color: #f0f0f0;
+}
+
+.login,
+.registro,
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.login button,
+.registro button {
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: clamp(100px, 50%, 200px);
+  height: auto;
+}
+
+.login,
+.registro {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login__container,
+.registro__container {
+  width: clamp(270px, 60%, 700px);
+  padding: 20px;
+  border-radius: 50px;
+  z-index: 1;
+  background: rgba(90, 90, 90, 0.3);
+  backdrop-filter: blur(9px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  font-size: larger;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 3rem, 4rem);
+  margin-bottom: clamp(1rem, 2rem, 3rem);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  font-family: "Open Sans", sans-serif;
+  padding: 1%;
+  color: #f0f0f0;
+}
+
+#nombre,
+#email,
+#password,
+#emailLogin,
+#passwordLogin {
+  all: unset;
+  display: inline-block;
+  margin: 20px;
+  border-bottom: 2px solid #ffffff;
+  font-family: "Open Sans", sans-serif;
+  transition: .7s;
+  color: #f0f0f0;
+}
+
+#nombre:focus,
+#email:focus,
+#password:focus,
+#emailLogin:focus,
+#passwordLogin:focus {
+  border-bottom: 2px solid #005685;
+}
+
+input::placeholder {
+  color: #ffffff;
+  font-family: "Open Sans", sans-serif;
+}
+
+.registro__img,
+.login__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+.screen__active,
+.screen__login,
+.screen__registro,
+.screen__app,
+#login,
+#registro,
+#app {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+#login,
+#registro,
+#app {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.app {
+  height: 60vh;
+  background-image: linear-gradient(rgba(126, 128, 255, 0.6) 0%, rgb(255, 210, 143) 50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  position: relative;
+  color: #f0f0f0;
+}
+
+.app::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 100%);
+}
+
+.app__header {
+  width: 100%;
+  padding: 15px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: rgba(137, 112, 153, 0.253);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.app__nav--container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+  width: 100%;
+}
+
+.app__logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  font-weight: bold;
+}
+
+.app__logo--img {
+  width: 60px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.app__logo--img:hover {
+  transform: scale(1.05);
+}
+
+.app__nav {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.app__nav-list {
+  padding: 0.5rem 0;
+}
+
+.app__nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+}
+
+.app__nav a:hover {
+  color: #28a745;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+
+.app__nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #28a745;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+i {
+  margin-right: 10px;
+}
+
+.app__nav a:hover::after {
+  width: 80%;
+}
+
+.app__subtitle {
+  color: white;
+  font-size: clamp(0.4rem, 2.8rem, 5rem);
+  font-family: "elegante", sans-serif;
+  font-weight: bold;
+  text-shadow: 2px 2px 6px rgba(39, 39, 39, 0.3);
+  transition: identifier 2s forwards;
+  animation: identifier 2s forwards;
+}
+
+.app__paragraph {
+  color: #fefefe;
+  font-size: clamp(0.6rem, 2.5rem, 4rem);
+  font-family: "amoria", sans-serif;
+  font-weight: bold;
+  text-shadow: 2px 1px 7px rgba(158, 158, 158, 0.7);
+  transition: identifier 3s forwards;
+  animation: identifier 3s forwards;
+}
+
+@keyframes identifier {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@font-face {
+  font-family: "elegante";
+  src: url(elegante.otf\ -\ Acceso\ directo.lnk);
+}
+
+@font-face {
+  font-family: "amoria";
+  src: url(AMORIA.otf);
+}
+
+.search {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: identifier 5s forwards;
+  animation: identifier 5s forwards;
+}
+
+.search__container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.search__form {
+  background: var(--blanco);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  max-width: 1000px;
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  align-items: end;
+}
+
+.search__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+  flex: 1;
+}
+
+.search__field--destination {
+  flex: 2;
+}
+
+.search__dates {
+  display: contents;
+}
+
+.search__label {
+  font-weight: bold;
+  color: var(--texto);
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+
+.search__input {
+  padding: 0.875rem 1rem;
+  border: 2px solid #e1e5e9;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+  color: #333;
+  font-family: inherit;
+}
+
+.search__input:focus {
+  outline: none;
+  border-color: var(--hover);
+  box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+.search__input:hover {
+  border-color: var(--hover);
+}
+
+.search__input--destination {
+  padding: 1rem 1.25rem;
+  font-size: 1.1rem;
+}
+
+.search__input::placeholder {
+  color: #888;
+  font-family: "Montserrat", sans-serif;
+}
+
+.search__input--select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+  padding-right: 2.5rem;
+  appearance: none;
+}
+
+.search__help {
+  color: #666;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+  opacity: 0.8;
+}
+
+.search__btn {
+  background: linear-gradient(135deg, var(--violeta), var(--azul));
+  color: white;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 15px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.search__btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(255, 140, 0, 0.4);
+  background: linear-gradient(135deg, var(--azul), var(--violeta));
+}
+
+.search__btn:active {
+  transform: translateY(0);
+}
+
+.search__btn-icon {
+  transition: transform 0.3s ease;
+}
+
+.search__btn:hover .search__btn-icon {
+  transform: scale(1.1);
+}
+
+.search__input:invalid {
+  border-color: #ff8989;
+}
+
+.search__input:invalid:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.hotels {
+  padding: 3rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  font-family: "montserrat", sans-serif;
+}
+
+.hotels__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.hotels__title {
+  font-size: 2.5rem;
+  color: var(--texto);
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--violeta), var(--azul));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "montserrat", sans-serif;
+}
+
+.hotels__subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: "open sans", sans-serif;
+}
+
+.hotels__filters {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.filter-btn {
+  padding: 0.5rem 1.5rem;
+  border: 2px solid var(--violeta);
+  background: transparent;
+  color: var(--violeta);
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--violeta);
+  color: white;
+}
+
+.hotel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.hotel-card {
+  background: var(--blanco);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.hotel-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.hotel-card__image {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.hotel-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.hotel-card:hover .hotel-card__image img {
+  transform: scale(1.05);
+}
+
+.hotel-card__badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: linear-gradient(135deg, var(--violeta), var(--azul));
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.hotel-card__content {
+  padding: 1.5rem;
+  font-family: "montserrat", sans-serif;
+}
+
+.hotel-card__name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--texto);
+  margin-bottom: 0.5rem;
+  font-family: "montserrat", sans-serif;
+}
+
+.hotel-card__city {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hotel-card__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  font-family: "montserrat", sans-serif;
+}
+
+.hotel-card__rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-weight: 600;
+  color: var(--hover);
+  font-family: "montserrat", sans-serif;
+}
+
+.hotel-card__price {
+  text-align: right;
+}
+
+.hotel-card__price-amount {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--violeta);
+  font-family: "montserrat", sans-serif;
+}
+
+.hotel-card__price-label {
+  font-size: 0.85rem;
+  color: #666;
+  font-family: "montserrat", sans-serif;
+}
+
+.hotel-card__features {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.hotel-card__feature {
+  padding: 0.25rem 0.75rem;
+  background: #f1f3f4;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  color: #666;
+  font-family: "montserrat", sans-serif;
+}
+
+.hotel-card__btn {
+  width: 100%;
+  padding: 0.875rem;
+  background: linear-gradient(135deg, var(--violeta), var(--azul));
+  color: white;
+  border: none;
+  border-radius: 15px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: "montserrat", sans-serif;
+}
+
+.hotel-card__btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(111, 66, 193, 0.3);
+}
+
+.hotels__load-more {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.load-more-btn {
+  padding: 1rem 2rem;
+  background: transparent;
+  border: 2px solid var(--violeta);
+  color: var(--violeta);
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.load-more-btn:hover {
+  background: var(--violeta);
+  color: white;
+}
+
+.weather {
+  padding: 60px 0;
+  background: linear-gradient(#ffffff 0%, #c3cfe2 100%);
+  min-height: 100vh;
+  animation: identifier 5s forwards;
+}
+
+.weather__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.weather__title {
+  font-size: 2.5rem;
+  text-align: center;
+  color: var(--azul);
+  margin-bottom: 10px;
+}
+
+.weather__subtitle {
+  text-align: center;
+  color: #7f8c8d;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+.weather__search {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.weather__input {
+  padding: 15px 20px;
+  border: 2px solid #ddd;
+  border-radius: 25px;
+  font-size: 1rem;
+  width: 300px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.weather__input:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
+}
+
+.weather__btn {
+  padding: 15px 30px;
+  background: linear-gradient(45deg, #3498db, #2980b9);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.weather__btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+}
+
+.weather__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+  margin-bottom: 50px;
+}
+
+.clima-card {
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.clima-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.clima-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(45deg, var(--azul), var(--violeta));
+}
+
+.ciudad-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.temperatura-principal {
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+  margin: 20px 0;
+  color: #e74c3c;
+}
+
+.temperatura-principal.frio {
+  color: #3498db;
+}
+
+.temperatura-principal.templado {
+  color: #f39c12;
+}
+
+.temperatura-principal.caliente {
+  color: #e74c3c;
+}
+
+.descripcion-clima {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+}
+
+.detalles-clima {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.detalle-item {
+  background: #f8f9fa;
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid #e9ecef;
+}
+
+.detalle-emoji {
+  font-size: 1.2rem;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.detalle-valor {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #2c3e50;
+}
+
+.detalle-label {
+  font-size: 0.8rem;
+  color: #95a5a6;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.weather__info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.weather__info-card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.weather__info-card h3 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+
+.weather__info-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.weather__info-card li {
+  padding: 10px 0;
+  border-bottom: 1px solid #ecf0f1;
+  color: #5d6d7e;
+}
+
+.weather__info-card li:last-child {
+  border-bottom: none;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.2rem;
+  color: #3498db;
+}
+
+.error {
+  background: #ffebee;
+  border: 1px solid #ffcdd2;
+  color: #c62828;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  margin: 15px 0;
+}
+
+.empty-state {
+  background: #e3f2fd;
+  border: 1px solid #bbdefb;
+  color: #1976d2;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.events {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  animation: fadeInUp 4s forwards;
+}
+
+header {
+  margin-bottom: 40px;
+}
+
+.title__events {
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.subtitle__events {
+  font-size: 1.1rem;
+  color: #666;
+  font-weight: 400;
+}
+
+.events__filters {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.search-box,
+.category-filter {
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  background: white;
+}
+
+.search-box:focus,
+.category-filter:focus {
+  outline: none;
+  border-color: #333;
+}
+
+.search-box {
+  flex: 1;
+  min-width: 280px;
+}
+
+.loading {
+  text-align: center;
+  color: #666;
+  font-size: 1.1rem;
+  margin: 60px 0;
+}
+
+.eventos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.evento-card {
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+  cursor: pointer;
+}
+
+.evento-card:hover {
+  border-color: #333
+}
+
+.evento-imagen {
+  width: 100%;
+  overflow: hidden;
+  height: 160px;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-size: 1rem;
+}
+.evento-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.evento-content {
+  padding: 20px;
+}
+
+.evento-titulo {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 12px;
+  color: #222;
+}
+
+.evento-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.evento-descripcion {
+  color: #666;
+  margin: 16px 0;
+  font-size: 0.95rem;
+}
+
+.evento-categoria {
+  display: inline-block;
+  background: #f0f0f0;
+  color: #666;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  margin-top: 8px;
+}
+
+.evento-precio {
+  font-weight: 500;
+  color: #333;
+  margin-top: 8px;
+}
+
+.no-eventos {
+  text-align: center;
+  color: #666;
+  margin: 60px 0;
+}
+
+.news {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: "montserrat", sans-serif;
+}
+
+.news__header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.news__title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #7E80FF, #4C5EFF);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.news__subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.news__filters {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.news-filter-btn {
+  padding: 8px 20px;
+  border: 2px solid #7E80FF;
+  background: transparent;
+  color: #7E80FF;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.news-filter-btn:hover,
+.news-filter-btn.active {
+  background: #7E80FF;
+  color: white;
+}
+
+.news__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 25px;
+}
+
+.news-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.news-card__image {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(45deg, #f0f2f5, #e1e5e9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  position: relative;
+  overflow: hidden;
+}
+
+.news-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.news-card__category {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: #FF8F5C;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.news-card__content {
+  padding: 20px;
+}
+
+.news-card__title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.news-card__excerpt {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.news-card__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.news-card__date {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.news-card__source {
+  font-weight: 600;
+  color: #7E80FF;
+}
+
+.news-card__btn {
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(135deg, #7E80FF, #4C5EFF);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+.news-card__btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(126, 128, 255, 0.3);
+}
+
+.news__load-more {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.load-more-news-btn {
+  padding: 12px 30px;
+  background: transparent;
+  border: 2px solid #7E80FF;
+  color: #7E80FF;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.load-more-news-btn:hover {
+  background: #7E80FF;
+  color: white;
+}
+
+@media (max-width: 1024px) {
+  .hero__overlay {
+    width: 90%;
+  }
+
+  .app__nav {
+    gap: 1rem;
+  }
+
+  .search__form {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .search__field {
+    flex: none;
+  }
+
+  .hotel-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .weather__title {
+    font-size: 2rem;
+  }
+
+  .weather__grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .paragraph {
+    font-size: 1.2rem;
+  }
+
+  .app__header {
+    padding: 10px 0;
+  }
+
+  .app__nav--container {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 3%;
+  }
+
+  .app__logo {
+    margin-bottom: 0.5rem;
+  }
+
+  .app__nav {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .app__nav a {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .app__logo--img {
+    width: 40px;
+  }
+
+  .search {
+    padding: 1rem;
+  }
+
+  .search__form {
+    padding: 1rem;
+  }
+
+  .hotels {
+    padding: 2rem 1rem;
+  }
+
+  .hotels__title {
+    font-size: 2rem;
+  }
+
+  .hotel-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .weather__search {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .weather__input {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .weather__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .temperatura-principal {
+    font-size: 2.5rem;
+  }
+
+  .detalles-clima {
+    grid-template-columns: 1fr;
+  }
+
+  .events {
+    padding: 20px 15px;
+  }
+
+  .title__events {
+    font-size: 2rem;
+  }
+
+  .events__filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .eventos-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .news {
+    padding: 20px 15px;
+  }
+
+  .news__title {
+    font-size: 2rem;
+  }
+
+  .news__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .news__filters {
+    gap: 10px;
+  }
+
+  .news-filter-btn {
+    padding: 6px 15px;
+    font-size: 0.85rem;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .hero__btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    margin: 5px;
+  }
+
+  .login__container,
+  .registro__container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .app__nav {
+    gap: 0.5rem;
+  }
+
+  .app__nav a {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .app__nav a span {
+    display: none;
+  }
+
+  .search__form {
+    padding: 0.8rem;
+    gap: 1rem;
+  }
+
+  .search__input {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+  }
+
+  .search__btn {
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .hotel-card__content {
+    padding: 1rem;
+  }
+
+  .filter-btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .weather__container {
+    padding: 0 10px;
+  }
+
+  .clima-card {
+    padding: 15px;
+  }
+
+  .weather__info {
+    grid-template-columns: 1fr;
+  }
+
+  .news-card__content {
+    padding: 15px;
+  }
+
+  .news-card__title {
+    font-size: 1.1rem;
+  }
+
+  .news-card__excerpt {
+    font-size: 0.9rem;
+  }
+  .app__nav span
+  { display: none; }
+  .app__nav i{
+    font-size: 1.5rem;
+  }
+}
