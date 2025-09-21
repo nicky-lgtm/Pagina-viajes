@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagina de Viajes</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    i {
+      font-size: 1.8rem;
+      margin-left: 10px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="screen__active">
+    <div class="hero">
+
+      <div class="hero__overlay">
+        <h1 class="title">Explora tu viaje en Colombia</h1>
+        <p class="paragraph">Encuentra tu próximo destino de viaje</p>
+        <button class="hero__btn hero__btn--iniciar">Iniciar sesión</button>
+        <button class="hero__btn hero__btn--crear">Crear cuenta</button>
+      </div>
+      <img src="hero4.jpg" alt="Imagen de un paisaje" class="hero__img">
+    </div>
+  </div>
+  <!-- INICIO -->
+  <div class="screen__login">
+    <div class="login" id="login" style="display:none;">
+      <div class="login__container">
+        <h2 class="subtitle">Iniciar sesión</h2>
+        <form>
+          <i class="fa-solid fa-user"></i>
+          <label for="emailLogin"></label>
+          <input type="email" id="emailLogin" name="emailLogin" required placeholder="Correo Electronico"><br><br>
+          <i class="fa-solid fa-key"></i>
+          <label for="passwordLogin"></label>
+          <input type="password" id="passwordLogin" name="passwordLogin" required placeholder="Contraseña"><br><br>
+          <label for="rememberLogin"></label>
+          <input type="checkbox" id="rememberLogin" name="rememberLogin" required placeholder="Contraseña"> Recordar
+          Contraseña <br><br>
+          <p>¿Olvidaste tu Contraseña?</p>
+        </form>
+
+        <button id="btnLoginContinuar">Iniciar sesión</button>
+      </div>
+      <img src="hero6.jpg" alt="Imagen de un paisaje" class="login__img">
+    </div>
+  </div>
+  <!-- REGISTRO -->
+  <div class="screen__registro"></div>
+  <div class="registro" id="registro" style="display:none;">
+    <div class="registro__container">
+      <h2 class="subtitle">Crear cuenta</h2>
+
+      <form>
+        <i class="fa-solid fa-user"></i>
+        <label for="nombre"></label>
+        <input type="text" id="nombre" name="nombre" required placeholder="Nombre de Usuario"><br><br>
+        <i class="fa-solid fa-envelope"></i>
+        <label for="email"></label>
+        <input type="email" id="email" name="email" required placeholder="Correo Electronico"><br><br>
+        <i class="fa-solid fa-key"></i>
+        <label for="password"></label>
+        <input type="password" id="password" name="password" required placeholder="Contraseña"><br><br>
+      </form>
+      <button id="btnRegistroContinuar">Crear Cuenta</button>
+    </div>
+    <img src="hero5.jpg" alt="Imagen de un paisaje" class="registro__img">
+  </div>
+
+  <div class="screen__app">
+    <div class="app" id="app" style="display:none;">
+      <header class="app__header">
+        <nav class="app__nav--container">
+
+          <ul class="app__nav">
+
+            <li class="app__logo">
+             <span> Secure Fly</span>
+              <img src="logo2.png" alt="Logo de la app" class="app__logo--img">
+            </li>
+
+            <li class="app__nav-list">
+
+              <a href="#" data-section="inicio"> <i class="fa-solid fa-house"></i><span>Inicio</span></a>
+            </li>
+
+            <li class="app__nav-list">
+
+              <a href="#" data-section="clima"><i class="fa-solid fa-cloud"></i>
+                <span>Clima</span></a>
+            </li>
+
+            <li class="app__nav-list">
+
+              <a href="#" data-section="eventos"> <i class="fa-solid fa-globe"></i><span>Eventos</span></a>
+            </li>
+
+            <li class="app__nav-list">
+
+              <a href="#" data-section="noticias">
+                <i class="fa-solid fa-comments"></i> <span>Noticias</span></a>
+            </li>
+
+            <li class="app__nav-list">
+
+              <a href="#" data-section="perfil">
+                <i class="fa-solid fa-user"></i><span>Perfil</span></a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <div class="app__content">
+        <h2 class="app__subtitle">Bienvenido a Secure Fly</h2>
+        <p class="app__paragraph">Tu compañero de viaje confiable</p>
+      </div>
+    </div>
+
+    <section class="search" style="display: none;">
+      <div class="search__container">
+        <form action="#" class="search__form" role="search">
+
+          <div class="search__field">
+            <label for="destination" class="search__label">¿A dónde quieres ir?</label>
+            <input type="text" id="destination" name="destination" class="search__input search__input--destination"
+              placeholder="Buscar destinos, hospedaje, hoteles..." required autocomplete="off"
+              aria-describedby="destination-help">
+            <small id="destination-help" class="search__help">Ingresa ciudad, hotel o lugar de interés</small>
+          </div>
+
+
+          <div class="search__dates">
+
+            <div class="search__field search__field--date">
+              <label for="checkin" class="search__label">Fecha de llegada</label>
+              <input type="date" id="checkin" name="checkin" class="search__input search__input--date" required min=""
+                aria-describedby="checkin-help">
+              <small id="checkin-help" class="search__help">Fecha de entrada</small>
+            </div>
+
+
+            <div class="search__field search__field--date">
+              <label for="checkout" class="search__label">Fecha de salida</label>
+              <input type="date" id="checkout" name="checkout" class="search__input search__input--date" required min=""
+                aria-describedby="checkout-help">
+              <small id="checkout-help" class="search__help">Fecha de salida</small>
+            </div>
+          </div>
+
+          <div class="search__field search__field--guests">
+            <label for="guests" class="search__label">Huéspedes</label>
+            <select id="guests" name="guests" class="search__input search__input--select"
+              aria-describedby="guests-help">
+              <option value="1">1 huésped</option>
+              <option value="2" selected>2 huéspedes</option>
+              <option value="3">3 huéspedes</option>
+              <option value="4">4 huéspedes</option>
+              <option value="5">5+ huéspedes</option>
+            </select>
+            <small id="guests-help" class="search__help">Número de personas</small>
+          </div>
+
+
+          <button type="submit" class="search__btn" aria-label="Buscar hospedaje">
+            <svg class="search__btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="M21 21l-4.35-4.35"></path>
+            </svg>
+            Buscar
+          </button>
+        </form>
+      </div>
+    </section>
+    <section class="hotels" style="display: none;">
+      <div class="hotels__header">
+        <h2 class="hotels__title">Hoteles en Colombia</h2>
+        <p class="hotels__subtitle">Descubre los mejores destinos y hospedajes en el país más acogedor de Sudamérica</p>
+      </div>
+
+      <div class="hotels__filters">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="Cartagena">Cartagena</button>
+        <button class="filter-btn" data-filter="Bogotá">Bogotá</button>
+        <button class="filter-btn" data-filter="Medellín">Medellín</button>
+        <button class="filter-btn" data-filter="Cali">Cali</button>
+        <button class="filter-btn" data-filter="Santa Marta">Santa Marta</button>
+      </div>
+
+      <div id="hotel-list" class="hotel-grid"></div>
+
+      <div class="hotels__load-more">
+        <button class="load-more-btn" onclick="cargarMasHoteles()">Cargar más hoteles</button>
+      </div>
+    </section>
+
+
+    <section class="weather" style="display: none;">
+      <div class="weather__container">
+        <h2 class="weather__title">Clima en Colombia</h2>
+        <p class="weather__subtitle">Consulta el clima actual y el pronóstico para tus destinos favoritos</p>
+
+        <div class="weather__search">
+          <input type="text" id="ciudad" placeholder="Escribe una ciudad..." class="weather__input">
+          <button onclick="buscarClima()" class="weather__btn">Buscar clima</button>
+        </div>
+
+        <div id="clima" class="weather__grid">
+        </div>
+
+        <div class="weather__info">
+          <div class="weather__info-card">
+            <h3><i class="fa-solid fa-sun"></i> Temperaturas ideales para viajar</h3>
+            <ul>
+              <li><strong>Playa:</strong> 25-30°C (Cartagena, Santa Marta)</li>
+              <li><strong>Ciudad:</strong> 18-25°C (Bogotá, Medellín)</li>
+              <li><strong>Montaña:</strong> 10-20°C (Villa de Leyva, Manizales)</li>
+            </ul>
+          </div>
+
+          <div class="weather__info-card">
+            <h3><i class="fa-solid fa-cloud-sun-rain"></i> Épocas del año</h3>
+            <ul>
+              <li><strong>Temporada seca:</strong> Dic-Mar, Jul-Ago</li>
+              <li><strong>Temporada lluviosa:</strong> Abr-Jun, Sep-Nov</li>
+              <li><strong>Mejor época:</strong> Dic-Feb (menos lluvia)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="events" style="display: none;">
+      <header>
+        <h1 class="title-events">Viajes en Bogotá</h1>
+        <p class="subtitle__events">Descubre los mejores eventos en la capital</p>
+      </header>
+
+      <div class="events__filters">
+        <input type="text" id="buscarEventos" class="search-box" placeholder="Buscar eventos...">
+
+        <select id="filtroCategoria" class="category-filter">
+          <option value="">Todas las categorías</option>
+          <option value="Música"> Música</option>
+          <option value="Cultural">Cultural</option>
+          <option value="Entretenimiento">Entretenimiento</option>
+          <option value="Educación"> Educación</option>
+          <option value="Deportes">Deportes</option>
+          <option value="Gastronomía"></i> Gastronomía</option>
+          <option value="Arte"> Arte</option>
+          <option value="Danza"> Danza</option>
+        </select>
+      </div>
+
+      <div id="loading" class="loading" style="display: none;">
+        Cargando eventos increíbles...
+      </div>
+
+      <div id="eventosContainer" class="eventos-grid"></div>
+
+      <div id="noEventos" class="no-eventos" style="display: none;">
+        No se encontraron eventos
+      </div>
+    </section>
+    <section class="news" style="display: none;">
+      <div class="news__header">
+        <h2 class="news__title">Noticias de Turismo</h2>
+        <p class="news__subtitle">Mantente informado sobre las últimas novedades del sector turístico en Colombia</p>
+      </div>
+
+      <div class="news__filters">
+        <button class="news-filter-btn active" data-category="all">Todas</button>
+        <button class="news-filter-btn" data-category="destinos">Destinos</button>
+        <button class="news-filter-btn" data-category="seguridad">Seguridad</button>
+        <button class="news-filter-btn" data-category="eventos">Eventos</button>
+        <button class="news-filter-btn" data-category="economia">Economía</button>
+      </div>
+
+      <div class="news__grid" id="news-grid">
+      </div>
+
+      <div class="news__load-more">
+        <button class="load-more-news-btn" onclick="cargarMasNoticias()">Ver más noticias</button>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
