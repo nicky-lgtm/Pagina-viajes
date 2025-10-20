@@ -825,4 +825,13 @@ document.addEventListener("DOMContentLoaded", () => {
   initEventListeners();
   iniciarEventos();
   mostrarNoticias();
+
 });
+
+const apiKey = "8681b433134742e7a69810dc1f84d15c";
+const url = `https://newsapi.org/v2/everything?q=turismo+Colombia&language=es&apiKey=${apiKey}`;
+
+fetch(url)
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error("Error:", error));
