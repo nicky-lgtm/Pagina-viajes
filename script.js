@@ -8,7 +8,6 @@ const hotels = document.querySelector(".hotels");
 const weather = document.querySelector('.weather');
 const events = document.querySelector('.events');
 const news = document.querySelector(".news");
-const apiKey = "acd9bf9b61a7a8af901af6fad06ed5da";
 const gastronomia = document.querySelector('.gastronomia');
 const profile = document.querySelector('.profile');
 
@@ -894,5 +893,6 @@ profileToggles.forEach(toggle => {
     toggle.classList.toggle('active');
   });
 });
+
 
 mostrarPlatos();
